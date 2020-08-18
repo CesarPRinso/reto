@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/experis?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: experis
+    password: experis
+  banner:
+    location: classpath:/banners/banner-prd.txt
+
