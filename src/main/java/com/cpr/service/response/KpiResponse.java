@@ -12,15 +12,15 @@ public class KpiResponse {
     @JsonProperty("edadMinima")
     private Integer minumEdge;
 
-    @JsonProperty("ClienteEdadMinima")
+    @JsonProperty("clienteEdadMinima")
     private Customer customerMinumEdge;
 
     @JsonProperty("edadMaxima")
     private Integer maximunEdge;
 
-    @JsonProperty("ClienteEdadMaxima")
+    @JsonProperty("clienteEdadMaxima")
     private Customer customerMaximunEdge;
-
+    //987248032
     public KpiResponse() {
     }
 

@@ -24,7 +24,7 @@ public class CustomerController {
 
     @GetMapping("/listar")
     public ResponseEntity<?> listar(@RequestParam(value="dni", required = false) String dni,
-                                       @RequestParam(value="email", required = false) String email) {
+                                       @RequestParam(value="correo", required = false) String email) {
         Map<String, Object> responseError = new HashMap<>();
         Map<String, Object> response = new HashMap<String, Object>();
 
