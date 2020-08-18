@@ -20,7 +20,7 @@ public class KpiResponse {
 
     @JsonProperty("clienteEdadMaxima")
     private Customer customerMaximunEdge;
-    //987248032
+
     public KpiResponse() {
     }
 

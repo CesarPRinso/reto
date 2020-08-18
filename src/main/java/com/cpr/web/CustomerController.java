@@ -24,14 +24,14 @@ public class CustomerController {
     CustomerService customerService;
 
     @GetMapping("/listar")
-    public ResponseEntity<?> listar(@RequestParam(value="dni", required = false) String dni,
-                                       @RequestParam(value="correo", required = false) String email) {
+    public ResponseEntity<?> listar(@RequestParam(value = "dni", required = false) String dni,
+                                    @RequestParam(value = "correo", required = false) String email) {
         Map<String, Object> responseError = new HashMap<>();
         Map<String, Object> response = new HashMap<String, Object>();
 
         try {
             response.put("result", 1);
-            response.put("data", customerService.findBy(dni,email));
+            response.put("data", customerService.findBy(dni, email));
             response.put("mensaje", "Consulta Exitosa.");
         } catch (Exception e) {
             responseError.put("result", "-1");
