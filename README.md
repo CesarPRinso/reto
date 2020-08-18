@@ -19,10 +19,11 @@ Recursos
 
 * En el directorio **resources/sql** se encuentra el query de base de datos para el proyecto.
 * En directorio **resources** se encuentran los archivos de configuración .yml, dividido por entornos; 
-    donde application.yml el encargado de ejecutar el entorno.
+    donde application.yml el encargado de ejecutar el entorno seleccionado.
 
 Instalación
 -----------
 
 Ejecutar query initialQuery.sql
+Ejecutar y descargar librerias en gradle.
 

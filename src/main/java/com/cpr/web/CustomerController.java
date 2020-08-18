@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.persistence.RollbackException;
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,7 +61,7 @@ public class CustomerController {
     }
 
     @PostMapping("/guardar")
-    public ResponseEntity<?> guardarCustomer(@RequestBody Customer customer) {
+    public ResponseEntity<?> guardarCustomer(@Valid @RequestBody Customer customer) {
         Map<String, Object> responseError = new HashMap<>();
         Map<String, Object> response = new HashMap<String, Object>();
         try {
@@ -71,7 +72,7 @@ public class CustomerController {
             return new ResponseEntity<Map<String, Object>>(responseError, HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             responseError.put("mensaje", "Error al ejecutar consulta en base de datos");
-            return new ResponseEntity<Map<String, Object>>(responseError, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Map<String, Object>>(responseError, HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
     }

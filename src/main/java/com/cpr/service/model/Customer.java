@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.Period;
@@ -19,22 +21,27 @@ public class Customer {
     private Long id;
 
     @JsonProperty("nombre")
-    @NotNull(message = "El campo nombre no puede estar vacío ")
+    @NotNull(message = "El campo nombre es requerido ")
+    @NotBlank(message = "El campo nombre no puede estar vacío ")
     @Column(name="NAME")
     private String name;
 
     @JsonProperty("apellidos")
-    @NotNull(message = "El campo apellido no puede estar vacío ")
+    @NotNull(message = "El campo apellido es requerido ")
+    @NotBlank(message = "El campo apellido no puede estar vacío ")
     @Column(name="LASTNAME")
     private String lastName;
 
     @JsonProperty("correo")
-    @Email(message = "el correo debe de ser válido")
+    @Email(message = "el correo ingresado no es válido")
+    @NotNull(message = "el campo correo es requerido")
+    @NotBlank(message = "el correo ingresado no es válido")
     @Column(name="EMAIL")
     private String email;
 
     @JsonProperty("dni")
-    @NotNull(message = "El campo dni no puede estar vacío ")
+    @NotNull(message = "El campo dni es requerido ")
+    @NotBlank(message = "El campo dni no puede estar vacío ")
     @Column(name="DNI")
     private String dni;
 
@@ -43,6 +50,7 @@ public class Customer {
     private LocalDate creationDate =  LocalDate.now();
 
     @JsonProperty("fechaNacimiento")
+    @NotNull(message = "El campo fechaNacimiento es requerido")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name="BIRTHDATE")
     private LocalDate birthdate;
