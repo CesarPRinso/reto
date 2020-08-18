@@ -68,8 +68,6 @@ public class CustomerController {
             response.put("result", 1);
             customerService.saveCustomer(customer);
             response.put("mensaje", "Se registro correctamente.");
-        } catch (RollbackException f) {
-            return new ResponseEntity<Map<String, Object>>(responseError, HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             responseError.put("mensaje", "Error al ejecutar consulta en base de datos");
             return new ResponseEntity<Map<String, Object>>(responseError, HttpStatus.BAD_REQUEST);
